@@ -5,7 +5,28 @@
   text-align: center;
 }
 
-.logo {
+.orders {
+  padding: 40px;
+}
+
+#incomplete-orders {
+  background-color:lightseagreen;
+}
+
+#complete-orders {
+  background-color:rgba(38, 176, 169, 0.039);
+}
+
+.headers {
+  font-size: large;
+  font-weight: bolder;
+}
+
+#all-orders-complete {
+  background-color: red;
+}
+
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -38,4 +59,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
