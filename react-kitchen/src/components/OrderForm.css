@@ -1,0 +1,31 @@
+.form {
+    padding: 40px;
+    background-color: ghostwhite;
+}
+
+.inner-form {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 284px;
+    margin-right: 20px;
+}
+
+#form-header {
+    font-size: large;
+    font-weight: bolder;
+    color: rgb(39, 39, 39);
+    margin-top: 0;
+}
+
+.labels {
+    color: rgb(39, 39, 39);
+}
+
+.inputs {
+    background-color: #cbcbcb;
+    border: 1px dashed #353535;
+    width: 200px;
+    color: #353535;
+    padding: 4px;
+}

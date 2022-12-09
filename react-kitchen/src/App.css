@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.App {
+  display: flex;
+}
+
 .orders {
   padding: 40px;
 }
