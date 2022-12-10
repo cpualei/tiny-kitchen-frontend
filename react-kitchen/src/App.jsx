@@ -36,22 +36,25 @@ function App() {
   return (
     <div className="App">
       <div>
-        <OrderForm createOrder={createOrder} />
-      </div>
-      <div>
-        {Object.keys(state.incompleteOrders).length ?
-          <div className="orders" id="incomplete-orders">
-            <span className="headers">Incomplete orders:</span>
-            <Orders orders={Object.values(state.incompleteOrders)} />
+        <h1 className='h1'>Tiny Kitchen</h1>
+        <div>
+          <OrderForm createOrder={createOrder} />
+        </div>
+        <div id="orders-contr">
+          {Object.keys(state.incompleteOrders).length ?
+            <div className="orders" id="incomplete-orders">
+              <span className="headers">Incomplete orders:</span>
+              <Orders orders={Object.values(state.incompleteOrders)} />
+            </div>
+            :
+            ""
+          }
+          {/* <br></br>
+      <br></br> */}
+          <div className="orders" id="complete-orders">
+            <span className="headers">Complete orders:</span>
+            <Orders orders={Object.values(state.completeOrders)} />
           </div>
-          :
-          ""
-        }
-      <br></br>
-      <br></br>
-        <div className="orders" id="complete-orders">
-          <span className="headers">Complete orders:</span>
-          <Orders orders={Object.values(state.completeOrders)} />
         </div>
       </div>
     </div>

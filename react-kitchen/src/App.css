@@ -3,10 +3,19 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: system-ui;
 }
 
 .App {
   display: flex;
+}
+
+.h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  font-family: system-ui;
+  color: lightseagreen;
+  -webkit-text-stroke: #20b2aa 1px;
 }
 
 .orders {
@@ -14,16 +23,25 @@
 }
 
 #incomplete-orders {
-  background-color:lightseagreen;
+  background-color: lightseagreen;
+  margin-right: 20px;
+  border-radius: 10px;
 }
 
 #complete-orders {
-  background-color:rgba(38, 176, 169, 0.039);
+  background-color: rgb(255 255 255 / 28%);
+  border-radius: 10px;
 }
 
 .headers {
-  font-size: large;
   font-weight: bolder;
+  -webkit-text-stroke: 0.5px;
+  font-size: 19px;
+}
+
+#orders-contr {
+  display: flex;
+
 }
 
 #all-orders-complete {
