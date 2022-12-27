@@ -4,12 +4,36 @@ import chefHat from "../../public/imgs/chefHat.jpg";
 
 export const OrderForm = ({ createOrder }) => {
 
-    const [newOrder, setNewOrder] = useState("");
+    // const newOrder = {
+    //     id: null,
+    //     name: "asdf",
+    //     address: "asdf",
+    //     items: "asdf",
+    //     isComplete: "false",
+    // }
+
+    // const [order, setOrder] = useState();
+    const [name, setName] = useState("");
+    const [address, setAddress] = useState("");
+    const [items, setItems] = useState("");
+
+
+    // const handleChange = (e) => {
+    //     setOrder({value: e.target.value})
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        createOrder(newOrder);
+        const order = {
+            id: null,
+            name: name,
+            address: address,
+            items: items,
+            isComplete: false
+        }
+
+        createOrder(order);
     }
 
     return (
@@ -24,7 +48,9 @@ export const OrderForm = ({ createOrder }) => {
                             <input
                                 className="inputs"
                                 type="text"
-                            // value={}
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                // onChange={handleChange}
                             />
                         </label>
                         <br></br>
@@ -33,6 +59,9 @@ export const OrderForm = ({ createOrder }) => {
                             <input
                                 className="inputs"
                                 type="text"
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                                // onChange={handleChange}
                             />
                         </label>
                         <br></br>
@@ -41,6 +70,9 @@ export const OrderForm = ({ createOrder }) => {
                             <input
                                 className="inputs"
                                 type="text"
+                                value={items}
+                                onChange={(e) => setItems(e.target.value)}
+                                // onChange={handleChange}
                             />
                         </label>
                         <p id="verbiage">* Please separate each item with a comma.<br></br>

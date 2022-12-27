@@ -13,16 +13,16 @@ function App() {
         name: "Caitlin",
         address: "24242 Santana, CA",
         items: "acai bowl",
-        isComplete: "true",
+        isComplete: true,
       },
     },
     incompleteOrders: {
-      2: {
+      1: {
         id: 2,
         name: "Kristi",
         address: "45454 Lilac, HI",
         items: "buddah bowl",
-        isComplete: "false",
+        isComplete: false,
       },
     },
   }
@@ -30,8 +30,13 @@ function App() {
   const [state, setState] = useState(allOrders);
 
   const createOrder = (order) => {
-    setState(...allOrders, allOrders.incompleteOrders.order);
+    const orderNum = Object.keys(state.incompleteOrders).length + 1;
+    order.id = Object.values(state).length + 1;
+    setState({...state.incompleteOrders, [orderNum]: order});
+    // console.log({...state.incompleteOrders, [orderNum]: order})
   }
+
+  console.log(Object.values(state.incompleteOrders))
 
   return (
     <div className="App">
@@ -41,16 +46,14 @@ function App() {
           <OrderForm createOrder={createOrder} />
         </div>
         <div id="orders-contr">
-          {Object.keys(state.incompleteOrders).length ?
+          {Object.values(state.incompleteOrders).length ?
             <div className="orders" id="incomplete-orders">
               <span className="headers">Incomplete orders:</span>
               <Orders orders={Object.values(state.incompleteOrders)} />
             </div>
-            :
+             :
             ""
           }
-          {/* <br></br>
-      <br></br> */}
           <div className="orders" id="complete-orders">
             <span className="headers">Complete orders:</span>
             <Orders orders={Object.values(state.completeOrders)} />
