@@ -4,14 +4,13 @@ import "./Order.css";
 export const Order = ({ order }) => {
     const [completed, setCompleted] = useState(order.isComplete);
 
-    const toggleComplete = () => {
-        if (order.isComplete === true) {
+    const toggle = () => {
+        if (completed === true) {
             setCompleted(false)
         } else {
             setCompleted(true)
         }
-        console.log(order.isComplete)
-
+        console.log(completed)
     }
 
     return (
@@ -23,7 +22,7 @@ export const Order = ({ order }) => {
                     <span>{order.items}</span>
                 </div>
                 <div>
-                    <button onClick={() => toggleComplete()}>{order.isComplete ? "Complete" : "Incomplete"}</button>
+                    <button onClick={() => toggle()}>{ completed ? "Complete" : "Incomplete" }</button>
                 </div>
             </div>
         </li>
